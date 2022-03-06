@@ -1,0 +1,33 @@
+"use strict";
+const fs = require("fs");
+const { hash } = require("../helpers/bcrypt");
+module.exports = {
+  async up(queryInterface, Sequelize) {
+    /**
+     * Add seed commands here.
+     *
+     * Example:
+     * await queryInterface.bulkInsert('People', [{
+     *   name: 'John Doe',
+     *   isBetaMember: false
+     * }], {});
+     */
+    let users = JSON.parse(fs.readFileSync("./data/users.json"));
+    users.forEach((el) => {
+      el.password = hash(el.password);
+      el.createdAt = new Date();
+      el.updatedAt = new Date();
+    });
+    await queryInterface.bulkInsert("Users", users);
+  },
+
+  async down(queryInterface, Sequelize) {
+    /**
+     * Add commands to revert seed here.
+     *
+     * Example:
+     * await queryInterface.bulkDelete('People', null, {});
+     */
+    await queryInterface.bulkDelete("Users", null);
+  },
+};

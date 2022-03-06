@@ -1,0 +1,37 @@
+{
+  "name": "p2-cms-integration-server",
+  "version": "1.0.0",
+  "description": "CMS Integration - Server",
+  "main": "index.js",
+  "scripts": {
+    "mon": "npx nodemon app.js",
+    "start": "node app.js",
+    "dbinit": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmt-21-uppsala-fox/p2-cms-integration-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmt-21-uppsala-fox/p2-cms-integration-server/issues"
+  },
+  "homepage": "https://github.com/rmt-21-uppsala-fox/p2-cms-integration-server#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "google-auth-library": "^7.14.0",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.3",
+    "sequelize": "^6.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "sequelize-cli": "^6.4.1"
+  }
+}

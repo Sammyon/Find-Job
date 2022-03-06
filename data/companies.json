@@ -1,0 +1,16 @@
+[
+  {
+      "name": "Company 1",
+      "companyLogo": "http://placekitten.com/c/100/100",
+      "location": "place1",
+      "email": "company@gmail.com",
+      "description": "testing"
+  },
+  {
+      "name": "Company 2",
+      "companyLogo": "http://placekitten.com/d/100/100",
+      "location": "place2",
+      "email": "company@gmail.com",
+      "description": "testing"
+  }
+]
