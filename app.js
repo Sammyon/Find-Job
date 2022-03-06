@@ -5,7 +5,7 @@ if (process.env.NODE_ENV === "development") {
 const express = require("express");
 const errorHandler = require("./helpers/errorHandler");
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 const cors = require('cors')
 const routes = require('./routes')
 
@@ -17,6 +17,6 @@ app.use("/", routes)
 
 app.use(errorHandler);
 
-app.listen(port, () => {
-  console.log(`Listening to port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Listening to port ${PORT}`);
 });
