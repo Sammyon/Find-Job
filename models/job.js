@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Job.belongsTo(models.User, { foreignKey: "authorId" });
       Job.belongsTo(models.Company, { foreignKey: "companyId" });
+      Job.hasMany(models.History, {foreignKey: "entityId"})
     }
   }
   Job.init(
@@ -48,6 +49,10 @@ module.exports = (sequelize, DataTypes) => {
           notNull: { msg: "Job Type cannot be empty" },
           notEmpty: { msg: "Job Type cannot be empty" },
         },
+      },
+      status: {
+        type: DataTypes.STRING,
+        defaultValue: "active",
       },
     },
     {
