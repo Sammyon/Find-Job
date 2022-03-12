@@ -5,7 +5,7 @@ const jobs = require("./jobs");
 const admins = require("./admins");
 const Controller = require("../controllers");
 
-router.use("/", admins);
+router.use("/admins", admins);
 
 router.use(authentication);
 router.get("/companies", Controller.getCompanies);

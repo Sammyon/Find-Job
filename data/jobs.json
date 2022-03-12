@@ -1,16 +1,16 @@
 [
   {
       "title": "Need Acountant ASAP",
-      "description": "Lorem Ipsum",
-      "imgUrl": "http://placekitten.com/a/100/100",
+      "description": "No question asked, big pay",
+      "imgUrl": "http://placekitten.com/103/100",
       "companyId": 1,
       "authorId": 1,
       "jobType": "Part-Time"
   },
   {
     "title": "Need Slaves",
-    "description": "Lorem Ipsum",
-    "imgUrl": "http://placekitten.com/b/100/100",
+    "description": "More workers are needed",
+    "imgUrl": "http://placekitten.com/104/100",
     "companyId": 1,
     "authorId": 1,
     "jobType": "Full-Time"

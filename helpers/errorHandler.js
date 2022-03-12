@@ -1,5 +1,5 @@
 function errorHandler(err, req, res, next) {
-  // console.log(err.name, err, "ERROR HANDLER");
+  console.log(err.name, err, "ERROR HANDLER");
 
   let errors = [];
   switch (err.name) {
@@ -29,6 +29,9 @@ function errorHandler(err, req, res, next) {
     case "authorizationFailed":
       res.status(403).json({ Error: "Forbidden to modify item" });
       break;
+    case "authzPatchFailed":
+      res.status(403).json({ Error: "Forbidden to modify item" });
+      break;
     case "adminLoginNoInput":
       res.status(401).json({ Error: "Email and Password is required" });
       break;
@@ -41,10 +44,19 @@ function errorHandler(err, req, res, next) {
     case "getJobDetailJobNotFound":
       res.status(404).json({ Error: "Error job not found" });
       break;
+    case "getJobDetailArchived":
+      res.status(404).json({ Error: "Error job not found" });
+      break;
     case "editJobNotFound":
       res.status(404).json({ Error: "Error job not found" });
       break;
-      case "deleteJobNotFound":
+    case "editJobArchived":
+      res.status(404).json({ Error: "Error job not found" });
+      break;
+    case "deleteJobNotFound":
+      res.status(404).json({ Error: "Error job not found" });
+      break;
+    case "updateJobStatusNotFound":
       res.status(404).json({ Error: "Error job not found" });
       break;
     case "googleRegUserNotFound":
