@@ -119,9 +119,9 @@ class Controller {
       );
 
       await History.create({
-        entityId: findJob[1][0].id,
-        name: findJob[1][0].title,
-        description: `Job with id ${findJob[1][0].id} edited`,
+        entityId: editjob[1][0].id,
+        name: editjob[1][0].title,
+        description: `Job with id ${editjob[1][0].id} edited`,
         updatedBy: email,
       });
 
@@ -195,7 +195,7 @@ class Controller {
       await History.create({
         entityId: job[1][0].id,
         name: job[1][0].title,
-        description: `Job with id ${job[1][0].id} status has been updated from ${jobBeforeUpdate.status} to ${job.status}`,
+        description: `Job with id ${job[1][0].id} status has been updated from ${jobBeforeUpdate.status} to ${job[1][0].status}`,
         updatedBy: email,
       });
 
